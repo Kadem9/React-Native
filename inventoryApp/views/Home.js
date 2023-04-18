@@ -1,37 +1,103 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 
-const Home = () => {
-  render();
+const Home = ({ navigation }) => {
   return (
     <View style={styles.containerFlex}>
+      {/* Boxe de mon header */}
       <View style={styles.header}>
         <View style={styles.headerImageWrapper}>
-          <Image style={styles.logo} source={require("./assets/logo.png")} />
+          <Image style={styles.logo} source={require("../assets/logo.png")} />
         </View>
         <Image
           style={styles.navburger}
-          source={require("./assets/burger-bar.png")}
+          source={require("../assets/burger-bar.png")}
         />
       </View>
 
+      {/* Boxe des alerts */}
       <View style={styles.alertInfo}>
         <Text style={styles.pAlert}>
           En cas de problème technique : 06.16.36.05.35
         </Text>
       </View>
+
+      {/* Boxe des applications */}
       <View style={styles.secondBox}>
-        <Button
-          onPress={() => {
-            navigation.navigate("Second");
-          }}
-          title="Go to second page"
-        />
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Inventory");
+            }}
+            style={styles.box}
+          >
+            <Image
+              source={require("../assets/appHome/010-notes.png")}
+              style={styles.image}
+            />
+            <View style={styles.boxText}>
+              <Text style={styles.boxTitle}>Inventaire</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Screen2");
+            }}
+            style={styles.boxTwo}
+          >
+            <Image
+              source={require("../assets/appHome/024-books.png")}
+              style={styles.image}
+            />
+            <View style={styles.boxText}>
+              <Text style={styles.boxTitleTwo}>Demandes</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Screen3");
+            }}
+            style={styles.boxTwo}
+          >
+            <Image
+              source={require("../assets/appHome/025-settings.png")}
+              style={styles.image}
+            />
+            <View style={styles.boxText}>
+              <Text style={styles.boxTitleTwo}>Paramètres</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Screen4");
+            }}
+            style={styles.box}
+          >
+            <Image
+              source={require("../assets/appHome/018-calendar.png")}
+              style={styles.image}
+            />
+            <View style={styles.boxText}>
+              <Text style={styles.boxTitle}>Matchs</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
       <StatusBar style="auto" />
     </View>
   );
 };
+
+export default Home;
 
 const styles = StyleSheet.create({
   containerFlex: {
@@ -47,8 +113,8 @@ const styles = StyleSheet.create({
     paddingEnd: 20,
   },
   logo: {
-    height: 80,
-    width: 80,
+    height: 120,
+    width: 120,
     resizeMode: "contain",
   },
   navburger: {
@@ -60,8 +126,8 @@ const styles = StyleSheet.create({
   headerImageWrapper: {
     borderRadius: 10,
     backgroundColor: "#fff",
-    height: 80,
-    width: 100,
+    height: 100,
+    width: 140,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -73,6 +139,7 @@ const styles = StyleSheet.create({
   secondBox: {
     flex: 6,
     backgroundColor: "#fff",
+    marginTop: 10,
   },
   pAlert: {
     color: "#fff",
@@ -81,6 +148,50 @@ const styles = StyleSheet.create({
     verticalAlign: "middle",
     fontSize: 18,
   },
+  row: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+  box: {
+    width: "45%",
+    aspectRatio: 1,
+    margin: "2.5%",
+    backgroundColor: "#FFE600",
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+  boxTwo: {
+    width: "45%",
+    aspectRatio: 1,
+    margin: "2.5%",
+    backgroundColor: "#262626",
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+  image: {
+    width: "60%",
+    height: "70%",
+    resizeMode: "contain",
+  },
+  boxText: {
+    alignItems: "center",
+  },
+  boxTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 10,
+  },
+  boxTitleTwo: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 10,
+    color: "#fff",
+  },
 });
-
-export default Home;

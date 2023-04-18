@@ -1,6 +1,6 @@
-import { Home } from "./views/Home";
+import Home from "./views/Home";
 import { Provider as PaperProvider } from "react-native-paper";
-import { Inventory } from "./views/Inventory";
+import Inventory from "./views/Inventory";
 
 // Navigation
 import { NavigationContainer } from "@react-navigation/native";
@@ -15,12 +15,12 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={Home}
-            options={{ title: "Accueil" }}
+            options={{ title: "Home" }}
           />
           <Stack.Screen
             name="Inventory"
             component={Inventory}
-            options={{ title: "Inventaire" }}
+            options={{ title: "Inventory" }}
           />
         </Stack.Navigator>
       </NavigationContainer>
