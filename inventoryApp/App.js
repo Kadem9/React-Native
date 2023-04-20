@@ -1,6 +1,7 @@
 import Home from "./views/Home";
 import { Provider as PaperProvider } from "react-native-paper";
-import Inventory from "./views/Inventory";
+import Users from "./views/Users";
+import Notes from "./views/Notes";
 
 // Navigation
 import { NavigationContainer } from "@react-navigation/native";
@@ -15,12 +16,17 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={Home}
-            options={{ title: "Home" }}
+            options={{ title: "Accueil" }}
           />
           <Stack.Screen
-            name="Inventory"
-            component={Inventory}
-            options={{ title: "Inventory" }}
+            name="Users"
+            component={Users}
+            options={{ title: "Utilisateurs" }}
+          />
+          <Stack.Screen
+            name="Notes"
+            component={Notes}
+            options={{ title: "Notes" }}
           />
         </Stack.Navigator>
       </NavigationContainer>

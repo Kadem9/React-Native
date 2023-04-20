@@ -115,3 +115,47 @@ const styles = StyleSheet.create({
 
 export default LotsOfStyles;
 ```
+
+### La navigation entre les écrans
+
+lien doc : https://reactnavigation.org/docs/getting-started
+Si on veut rajouter sur notre projet, on utilisera npm :
+
+```bash
+npm install @react-navigation/native @react-navigation/native-stack
+```
+
+si on utilise expo il faudra faire des installations suppl.
+
+```bash
+npx expo install react-native-screens react-native-safe-area-context
+```
+
+ensuite comme vu sur la doc on englobe notre app avec le navcontainer :
+
+```javascript
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
+export default function App() {
+  return (
+    <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+  );
+}
+```
+
+### React Native Paper
+
+Nous sommes un peu plus limité que sur du css en web. Et donc des bibliothèques existe (doc : https://reactnativepaper.com/).
+Nous avons vu avec le prof react native paper.
+Leur description en FR :
+
+```text
+React Native Paper est une bibliothèque de conception de matériaux de haute qualité et conforme aux normes qui vous couvre dans tous les principaux cas d'utilisation.
+```
+
+Ca nous permet d'utiliser des composants. C'est simple d'utilisation, encore une fois il faudra npm install les dépendances.
+
+### Express et BodyParser
+
+voir image dans pictures/explicationExpresss

@@ -34,7 +34,7 @@ const Home = ({ navigation }) => {
         <View style={styles.row}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Inventory");
+              navigation.navigate("Users");
             }}
             style={styles.box}
           >
@@ -43,14 +43,14 @@ const Home = ({ navigation }) => {
               style={styles.image}
             />
             <View style={styles.boxText}>
-              <Text style={styles.boxTitle}>Inventaire</Text>
+              <Text style={styles.boxTitle}>Utilisateurs</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Screen2");
+              navigation.navigate("Notes");
             }}
-            style={styles.boxTwo}
+            style={styles.box}
           >
             <Image
               source={require("../assets/appHome/024-books.png")}
