@@ -50,7 +50,7 @@ const Home = ({ navigation }) => {
             onPress={() => {
               navigation.navigate("Notes");
             }}
-            style={styles.box}
+            style={styles.boxTwo}
           >
             <Image
               source={require("../assets/appHome/024-books.png")}

@@ -6,6 +6,9 @@ import Notes from "./views/Notes";
 // Navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeLoader from "./views/HomeLoader";
+import Login from "./views/Login";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -13,6 +16,16 @@ export default function App() {
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator>
+          {/* <Stack.Screen
+            name="HomeLoader"
+            component={HomeLoader}
+            options={{ title: "ManiEduc" }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ title: "Connexion" }}
+          /> */}
           <Stack.Screen
             name="Home"
             component={Home}
