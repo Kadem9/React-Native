@@ -8,10 +8,6 @@ const Notes = () => {
   const [notesContent, setNotesContent] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleIsOpen = () => {
-    setIsOpen(!isOpen);
-  };
-
   useEffect(() => {
     const createNotesDirectory = async () => {
       try {
@@ -54,7 +50,7 @@ const Notes = () => {
       setNotesContent(content);
       console.log("Contenu des notes:", content);
       setIsOpen(!isOpen);
-      setNotesContent("");
+      setNoteText("");
     } catch (error) {
       console.error("erreur de lecture", error);
     }

@@ -218,7 +218,7 @@ const Users = () => {
       })
       .catch((error) => {
         if (error instanceof SyntaxError) {
-          console.error("Invalid JSON:", error.message);
+          console.error("Erreur JSON :", error.message);
         }
         console.error(error);
       });

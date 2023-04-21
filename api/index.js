@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import userRouter from "./routes/users.js";
 import { config } from "./config.js";
 import updateUserRouter from "./routes/updateUsers.js";
+import authRouter from "./routes/auth.js";
 
 const connection = mysql.createConnection(config);
 
@@ -20,6 +21,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use("/auth", authRouter.loginRoute);
 app.use("/users", userRouter);
 app.use("/update", updateUserRouter);
 app.listen(3000, () => {
