@@ -8,6 +8,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeLoader from "./views/HomeLoader";
 import Login from "./views/Login";
+import Mail from "./views/Mail";
+import CameraScreen from "./views/Camera";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +42,16 @@ export default function App() {
             name="Notes"
             component={Notes}
             options={{ title: "Notes" }}
+          />
+          <Stack.Screen
+            name="Mail"
+            component={Mail}
+            options={{ title: "Envoie de mail" }}
+          />
+          <Stack.Screen
+            name="Camera"
+            component={CameraScreen}
+            options={{ title: "Ma caméra" }}
           />
         </Stack.Navigator>
       </NavigationContainer>

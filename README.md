@@ -12,6 +12,7 @@ J'ai également utilisé Mysql, puisque mes données sont stockées sur une base
 ## Comment lancer et tester mon application
 
 Pour lancer mon application, il faudra d'abord lancer l'api avec Node.
+N'oubliez pas de mettre vos informations de base de donnée dans le fichier .env
 
 ```bash
 npm run dev
@@ -24,4 +25,5 @@ npm start
 ```
 
 N'oubliez pas de régler les urls avec l'adresse ip de votre réseau, sinon vous n'aurez pas accès à une liste d'utilisateur.
+(À modifier dans le fichier Users.js)
 Vous avez en pj une base de donnée en sql pour importer en local.

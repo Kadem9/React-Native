@@ -1,115 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import {
-//   StyleSheet,
-//   Text,
-//   View,
-//   FlatList,
-//   Modal,
-//   TouchableOpacity,
-// } from "react-native";
-// import UpdateForm from "./UpdateForm";
-
-// const Users = () => {
-//   const [users, setUsers] = useState([]);
-//   //
-//   const [modalVisible, setModalVisible] = useState(false);
-//   const [selectedUser, setSelectedUser] = useState(null);
-
-//   useEffect(() => {
-//     fetch("http://172.16.1.165:3000/users")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         // Use the data from the server here
-//         setUsers(data);
-//       })
-//       .catch((error) => {
-//         // Handle any errors that occur
-//         console.error(error);
-//       });
-//   }, []);
-
-//   const handleUpdate = (userData) => {
-//     fetch("http://172.16.1.165:3000/users/" + userData.id, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(userData),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log(data);
-//         setModalVisible(false);
-//       })
-//       .catch((error) => {
-//         console.error(error);
-//       });
-//   };
-
-//   return (
-//     <View style={styles.container}>
-//       <Text style={styles.title}>Liste des éducateurs</Text>
-//       <FlatList
-//         data={users}
-//         renderItem={({ item }) => (
-//           <View style={styles.item}>
-//             <Text style={styles.firstname}>
-//               {item.firstname} {item.lastname}
-//             </Text>
-//             <Text style={styles.email}>{item.email}</Text>
-//             <Text style={styles.firstname}>Numéro : {item.number_phone}</Text>
-//             <TouchableOpacity
-//               style={styles.button}
-//               onPress={() => {
-//                 // Open the update form
-//                 handleUpdate(item);
-//                 setSelectedUser(item);
-//                 setModalVisible(true);
-//               }}
-//             >
-//               <Text style={styles.buttonText}>Modifier</Text>
-//             </TouchableOpacity>
-//           </View>
-//         )}
-//         keyExtractor={(item) => item.id}
-//       />
-//       <Modal animationType="slide" visible={modalVisible}>
-//         <View style={styles.modal}></View>
-//       </Modal>
-//     </View>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     paddingTop: 22,
-//     backgroundColor: "#fff",
-//   },
-//   title: {
-//     fontSize: 20,
-//     fontWeight: "bold",
-//     textAlign: "center",
-//     marginVertical: 20,
-//   },
-//   item: {
-//     borderBottomWidth: 1,
-//     borderBottomColor: "#ccc",
-//     paddingVertical: 10,
-//     padding: 10,
-//   },
-//   name: {
-//     fontSize: 16,
-//     fontWeight: "bold",
-//   },
-//   email: {
-//     fontSize: 14,
-//     color: "#999",
-//   },
-// });
-
-// export default Users;
-
 import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
@@ -121,6 +9,10 @@ import {
 } from "react-native";
 
 const Users = () => {
+  // MODIFIER L'IP ET LE PORT ICI
+  const envIp = "192.168.0.31";
+  const envPort = "3000";
+
   const [users, setUsers] = useState([]);
   const [editUserId, setEditUserId] = useState(null);
   const [newFirstname, setNewFirstname] = useState("");
@@ -133,9 +25,8 @@ const Users = () => {
     setNewLastname(lastname);
     setNewEmail(email);
   };
-
   const handleSave = () => {
-    fetch(`http://172.16.1.165:3000/update/users/${editUserId}`, {
+    fetch(`http://${envIp}:${envPort}/update/users/${editUserId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -211,7 +102,7 @@ const Users = () => {
   };
 
   const fetchData = () => {
-    fetch("http://172.16.1.165:3000/users")
+    fetch(`http://${envIp}:${envPort}/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);

@@ -39,7 +39,7 @@ const Home = ({ navigation }) => {
             style={styles.box}
           >
             <Image
-              source={require("../assets/appHome/010-notes.png")}
+              source={require("../assets/appHome/018-calendar.png")}
               style={styles.image}
             />
             <View style={styles.boxText}>
@@ -57,14 +57,14 @@ const Home = ({ navigation }) => {
               style={styles.image}
             />
             <View style={styles.boxText}>
-              <Text style={styles.boxTitleTwo}>Demandes</Text>
+              <Text style={styles.boxTitleTwo}>Mes notes</Text>
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Screen3");
+              navigation.navigate("Camera");
             }}
             style={styles.boxTwo}
           >
@@ -73,21 +73,21 @@ const Home = ({ navigation }) => {
               style={styles.image}
             />
             <View style={styles.boxText}>
-              <Text style={styles.boxTitleTwo}>Paramètres</Text>
+              <Text style={styles.boxTitleTwo}>Caméra</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Screen4");
+              navigation.navigate("Mail");
             }}
             style={styles.box}
           >
             <Image
-              source={require("../assets/appHome/018-calendar.png")}
+              source={require("../assets/appHome/010-notes.png")}
               style={styles.image}
             />
             <View style={styles.boxText}>
-              <Text style={styles.boxTitle}>Matchs</Text>
+              <Text style={styles.boxTitle}>Mails</Text>
             </View>
           </TouchableOpacity>
         </View>
